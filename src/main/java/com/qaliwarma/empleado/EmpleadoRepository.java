@@ -17,7 +17,7 @@ public interface EmpleadoRepository extends JpaRepository<EmpleadoEntity, Intege
             SELECT nombre, rol
             FROM colegios
             WHERE usuario = :usuario
-              AND password = :password;
+              AND password = :password
             """, nativeQuery = true)
     Object loginPlataforma(@Param("usuario") String usuario,
                            @Param("password") String password);
