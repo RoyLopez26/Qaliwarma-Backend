@@ -22,7 +22,7 @@ public class EmpleadoController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody CredencialesDTO credencialesDTO) {
         try {
-            Map<String, String> datosUsuario = empleadoService.loginPlataforma(credencialesDTO.getUsuario(), credencialesDTO.getContrasenia());
+            Map<String, String> datosUsuario = empleadoService.loginPlataforma(credencialesDTO.getUsuario(), credencialesDTO.getPassword());
             return ResponseEntity.status(HttpStatus.OK).body(datosUsuario);
         } catch (ResponseStatusException e) {
             return ResponseEntity.status(e.getStatusCode()).build();
