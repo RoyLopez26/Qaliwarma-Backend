@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class CredencialesDTO {
     private String usuario;
-    private String password;
+    private String contrasenia;
 }
