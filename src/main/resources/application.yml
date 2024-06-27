@@ -6,7 +6,7 @@ spring:
       ddl-auto: none
 
   datasource:
-    url: jdbc:postgresql://bd-qaliwarma.postgres.database.azure.com:5432/qaliwarma
+    url: jdbc:postgresql://bd-qaliwarma.postgres.database.azure.com:5432/qaliwarma?sslmode=require
     username: administrador
     password: Postgres2024
     driver-class-name: org.postgresql.Driver
