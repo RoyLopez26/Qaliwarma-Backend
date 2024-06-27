@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/qaliwarma
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
