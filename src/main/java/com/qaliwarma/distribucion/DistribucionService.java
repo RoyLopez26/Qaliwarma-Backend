@@ -12,4 +12,6 @@ public interface DistribucionService {
     List<Map<String, Object>> obtenerDistribucionConDetalles(Integer distribucionId);
 
     String eliminarDistribucion(Integer distribucionId);
+
+    String actualizarEstado(Integer distribucionId);
 }

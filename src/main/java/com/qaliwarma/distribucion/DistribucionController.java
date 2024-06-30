@@ -22,7 +22,7 @@ public class DistribucionController {
     public ResponseEntity<?> guardarDistribucion(@RequestBody DistribucionDTO distribucionDTO) {
         DistribucionEntity distribucionGuardada = distribucionService.guardarDistribucion(distribucionDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(distribucionGuardada);
-    }
+     }
 
     @GetMapping
     public ResponseEntity<?> listarDistribucionesConDetalles() {
@@ -43,6 +43,12 @@ public class DistribucionController {
     @DeleteMapping("/{distribucionId}")
     public ResponseEntity<?> eliminarDistribucion(@PathVariable Integer distribucionId) {
         var mensaje = distribucionService.eliminarDistribucion(distribucionId);
+        return ResponseEntity.status(HttpStatus.OK).body(mensaje);
+    }
+
+    @PostMapping("/estado/{distribucionId}")
+    public ResponseEntity<?> actualizarEstadoDistribucion(@PathVariable Integer distribucionId) {
+        var mensaje = distribucionService.actualizarEstado(distribucionId);
         return ResponseEntity.status(HttpStatus.OK).body(mensaje);
     }
 

@@ -57,6 +57,13 @@ public class DistribucionServiceImpl implements DistribucionService{
         return "Distribucion eliminada correctamente";
     }
 
+    @Override
+    public String actualizarEstado(Integer distribucionId) {
+        var distribucion = distribucionRepository.findById(distribucionId).orElse(null);
+        distribucion.setEstadoEntrega("Completado");
+        distribucionRepository.save(distribucion);
+        return "Se cambio el estado correctamente";
+    }
 
     private List<Map<String, Object>> agruparDetallesPorDistribucion(List<Object[]> resultadoConsulta) {
         Map<Integer, Map<String, Object>> distribucionesMap = new LinkedHashMap<>();
